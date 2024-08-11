@@ -98,3 +98,4 @@ C:\MyProject\TestProject\obj\Debug\net8.0\refint\TestProject.dll
 C:\MyProject\TestProject\obj\Debug\net8.0\TestProject.pdb
 C:\MyProject\TestProject\obj\Debug\net8.0\TestProject.genruntimeconfig.cache
 C:\MyProject\TestProject\obj\Debug\net8.0\ref\TestProject.dll
+C:\MyProject\TestProject\obj\Debug\net8.0\TestProject.sourcelink.json
