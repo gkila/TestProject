@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using NUnit.Framework.Interfaces;
 
 public class ProgramTest
     {
@@ -20,13 +21,14 @@ public class ProgramTest
         {
              if (File.Exists(filePath))
             {
-                File.Delete(filePath);
+               File.Delete(filePath);
             }
         }
     
         [Test]
-        public void LogTest()
+        public void LogTestFileShouldBeCreated()
         {
-          
+            p.LogFormat("User logged in", "INFO");
+            Assert.That(File.Exists(filePath), Is.True, "file exist.");
         }
     }
