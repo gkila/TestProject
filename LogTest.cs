@@ -10,6 +10,7 @@ public class ProgramTest
         public void Setup()
         {
             p = new Program();
+
             if (File.Exists(filePath))
             {
                 File.Delete(filePath);
@@ -30,5 +31,16 @@ public class ProgramTest
         {
             p.LogFormat("User logged in", "INFO");
             Assert.That(File.Exists(filePath), Is.True, "file exist.");
+        }
+
+          [Test]
+        public void ValidateLogFileMessage()
+        {
+             p.LogFormat("User logged in", "INFO");
+             p.LogFormat("Failed login attempt", "WARNING");
+
+            var logContents = File.ReadAllLines(filePath);
+            Assert.That(logContents, Has.Some.Contains("[INFO] User logged in"));
+            Assert.That(logContents, Has.Some.Contains("[WARNING] Failed login attempt"));
         }
     }
