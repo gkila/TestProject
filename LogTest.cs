@@ -33,7 +33,7 @@ public class ProgramTest
             Assert.That(File.Exists(filePath), Is.True, "file exist.");
         }
 
-          [Test]
+        [Test]
         public void ValidateLogFileMessage()
         {
              p.LogFormat("User logged in", "INFO");
